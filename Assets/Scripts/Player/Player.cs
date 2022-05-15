@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int _health;
 
     public event UnityAction<int> HeathChanged;
+    public event UnityAction Died;
 
     private void Start()
     {
@@ -27,6 +28,6 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("I'm die");
+       Died?.Invoke();
     }
 }
